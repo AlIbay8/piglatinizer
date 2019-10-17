@@ -1,18 +1,20 @@
 var vowels = ["a", "e", "i", "o", "u"];
+var ingstray = [];
 
 $( "document" ).ready(function() {
     $("#button").click(function() {
         var string = $(".input").val().toLowerCase();
         var words = string.split(" ");
         var vowel = false;
+        ingstray = [];
 
         words.forEach(function(word) {
             var pig1 = pig(word);
             var latin1 = latin(word);
-            $(".output").append("<p>" + pig1 + latin1 + "</p>");
+            ingstray.push(pig1 + latin1 + " ");
         })
 
-        $(input).val("");
+        $(".output").append("<p>" + ingstray.join("") + "</p>");
     })
 });
 
